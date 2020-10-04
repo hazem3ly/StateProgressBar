@@ -32,7 +32,7 @@ import java.util.List;
 public class StateProgressBar extends View {
 
 
-    public enum StateNumber {
+    /*public enum StateNumber {
         ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5);
         private int value;
 
@@ -43,10 +43,10 @@ public class StateProgressBar extends View {
         public int getValue() {
             return value;
         }
-    }
+    }*/
 
     private static final int MIN_STATE_NUMBER = 1;
-    private static final int MAX_STATE_NUMBER = 5;
+    private static final int MAX_STATE_NUMBER = 6;
 
     private static final String STATE_SIZE_KEY = "mStateSize";
     private static final String STATE_LINE_THICKNESS_KEY = "mStateLineThickness";
@@ -415,9 +415,9 @@ public class StateProgressBar extends View {
         return mCurrentStateDescriptionColor;
     }
 
-    public void setCurrentStateNumber(StateNumber currentStateNumber) {
-        validateStateNumber(currentStateNumber.getValue());
-        mCurrentStateNumber = currentStateNumber.getValue();
+    public void setCurrentStateNumber(int currentStateNumber) {
+        validateStateNumber(currentStateNumber);
+        mCurrentStateNumber = currentStateNumber;
         updateCheckAllStatesValues(mEnableAllStatesCompleted);
         invalidate();
     }
@@ -427,8 +427,8 @@ public class StateProgressBar extends View {
     }
 
 
-    public void setMaxStateNumber(StateNumber maximumState) {
-        mMaxStateNumber = maximumState.getValue();
+    public void setMaxStateNumber(int maximumState) {
+        mMaxStateNumber = maximumState;
         resolveMaxStateNumber();
     }
 
@@ -666,8 +666,8 @@ public class StateProgressBar extends View {
         mStateNumberTextSize = 0.0f;
         mStateDescriptionSize = 15f;
 
-        mMaxStateNumber = StateNumber.FIVE.getValue();
-        mCurrentStateNumber = StateNumber.ONE.getValue();
+        mMaxStateNumber = 5;
+        mCurrentStateNumber = 1;
 
         mSpacing = 4.0f;
 

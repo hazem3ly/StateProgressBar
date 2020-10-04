@@ -71,8 +71,8 @@ public abstract class BaseActivity extends Activity {
                 break;
 
             case R.id.current_state:
-                if (stateProgressBar.getMaxStateNumber() >= StateProgressBar.StateNumber.TWO.getValue())
-                    stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                if (stateProgressBar.getMaxStateNumber() >= 2)
+                    stateProgressBar.setCurrentStateNumber(2);
                 else
                     Toast.makeText(getApplicationContext() , getResources().getString(R.string.max_error_message) , Toast.LENGTH_LONG).show();
 
@@ -80,8 +80,8 @@ public abstract class BaseActivity extends Activity {
                 break;
 
             case R.id.max_state:
-                if (stateProgressBar.getCurrentStateNumber() <= StateProgressBar.StateNumber.FOUR.getValue())
-                    stateProgressBar.setMaxStateNumber(StateProgressBar.StateNumber.FOUR);
+                if (stateProgressBar.getCurrentStateNumber() <= 4)
+                    stateProgressBar.setMaxStateNumber(4);
                 else
                 Toast.makeText(getApplicationContext() , getResources().getString(R.string.max_error_message) , Toast.LENGTH_LONG).show();
 
